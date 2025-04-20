@@ -20,5 +20,5 @@ difference(){
         wheel(5, 4);
         
     }
-    cylinder(4, 3, 3);
+    cylinder(4, 3.5, 3.5);
 }
