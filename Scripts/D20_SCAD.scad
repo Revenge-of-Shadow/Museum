@@ -6,11 +6,11 @@ module letter(l){
 module rotated_cube(angle, magic_angle, side, slant_height, cutoff_thickness = 4){
     rotate([magic_angle, 0, angle])
     translate([0, cutoff_thickness/2, slant_height/2])
-    cube([side, cutoff_thickness, slant_height], center = true);
+    cube([side+2, cutoff_thickness, slant_height+2], center = true);
     
     rotate([0, 0, angle])
     translate([0, cutoff_thickness/2, slant_height/2])
-    cube([side, cutoff_thickness, slant_height], center = true);
+    cube([side+2, cutoff_thickness, slant_height+2], center = true);
     
 }
 
@@ -59,6 +59,7 @@ str_side_bottom = ["16", "17", "18", "19", "20"];
 difference(){
     color("Gray", 1.0)
     union(){
+        sphere(15);
         translate([0,0,displacement])
         the_pyramid(height, side_amount, side);
 
