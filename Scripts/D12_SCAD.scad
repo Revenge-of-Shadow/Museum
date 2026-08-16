@@ -6,15 +6,11 @@ gamma2 = 90+asin(cos(18)*cos(gamma1/2)/cos(54));
 r = cube_side/2 / tan(36);
 R = cube_side/2 / sin(36);
 cube_height = cube_side*cos(gamma2 - 90) + (r+R)*cos(gamma1-90);
-//gamma1 = 116.57;
-//gamma2 = 148.28;
-//r = 13.76;
-//R = 17.01;
-//cube_height = 38.035;
+
 
 module letter(l){
     mirror([180, 0, 0])
-    linear_extrude(cube_side/2, center=true) text(l, 5, "3270 Nerdfont", halign = "center", valign = "center");
+    linear_extrude(cube_side/2, center=true) text(l, 10, "3270 Nerdfont", halign = "center", valign = "center");
 }
 
 module rotated_cube(angle, magic_angle, side, slant_height, letter, cutoff_thickness = 8){
@@ -35,9 +31,9 @@ module rotated_cube(angle, magic_angle, side, slant_height, letter, cutoff_thick
 strings = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
 
 
-//scale([1.25, 1.25, 1.25])
+scale([0.5, 0.5, 0.5])
 difference(){
-//    color("#444444")
+    color("#444444")
     sphere(r = cube_side*1.47);
     
     for(j = [0:1:1]){
