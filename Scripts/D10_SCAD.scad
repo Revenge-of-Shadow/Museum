@@ -22,7 +22,6 @@ module rotated_cube(angle, l){
     
 }
 
-scale([1.25, 1.25, 1.25])
 difference(){
     color("#444444")
     //cylinder(h = cube_height, r = cube_side/2, center = true);
@@ -31,10 +30,10 @@ difference(){
     
     
     for(i = [1:1:5]){
-        rotated_cube(rot_angle*i, str(i*1));
+        rotated_cube(rot_angle*i, str((i-1)*10));
     }
     rotate([180, 0, 0])
     for(i = [6:1:10]){
-        rotated_cube(rot_angle*i, str(i*1));
+        rotated_cube(rot_angle*(i-1), str((i-1)*10));
     }
 }
